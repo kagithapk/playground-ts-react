@@ -1,0 +1,56 @@
+.switch__container {
+  --day-color-1: #FF8C00;
+  --night-color: #272751;
+  --day-color: linear-gradient(40deg,#FF0080,#FF8C00 70%);
+  --night-background: radial-gradient(circle at top left,#50507f,#272751);
+  --transition-time: 0.5s;
+  --switch-width: 3rem;
+  --switch-height: 1.5rem;
+
+  height: var(--switch-height);
+  width: var(--switch-width);
+
+  .switch {
+    position: relative;
+    
+    .slider {
+      position: absolute;
+      height: var(--switch-height);
+      width: var(--switch-width);
+      border-radius: 30px;
+      background-color: var(--night-color);
+      cursor: pointer;
+      transition: var(--transition-time);
+      z-index: 99;
+      transform: translateX(-20px);
+      
+      &:before {
+        position: absolute;
+        left: 5px;
+        bottom: 4px;
+        height: 1rem;
+        width: 1rem;
+        content: "";
+        border-radius: 50%;
+        background: var(--day-color);
+        transition: var(--transition-time);
+      }
+    } 
+  }
+
+  #toggle {
+    opacity: 0;
+    touch-action: none;
+    
+    &:checked {
+      & ~ .slider {
+        background: var(--day-color-1);
+      }
+      & ~ .slider:before {
+        background: var(--day-color-1);
+        box-shadow: inset -5px -3px 0 0px var(--night-color);
+        transform: translate(1.5rem);
+      }
+    }
+  }
+}

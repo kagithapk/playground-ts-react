@@ -1,0 +1,11 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-blue);
+  padding: 1rem;
+  -webkit-box-shadow: 3px 3px 5px 1px #201f1f;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 1px #201f1f;  /* Firefox 3.5 - 3.1 */
+  box-shadow: 3px 3px 5px 1px #201f1f;
+  display: flex;
+  justify-content: space-between;
+}
